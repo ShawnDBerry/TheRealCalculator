@@ -198,11 +198,10 @@ public class MainActivity extends AppCompatActivity {
                 calculatorText.setText(newText);
                 break;
 
-            /*case R.id.period_button:
-                if(calculatorText.getText().toString().trim().equals("0"))
-                    calculatorText.setText(newText);
+            /*case R.id.decimal_button:
 
                 newText = calculatorText.getText().toString().trim() + ".";
+                if(calculatorText.getText().toString().trim())
                 calculatorText.setText(newText);
                 break;*/
 
