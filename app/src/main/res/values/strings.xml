@@ -4,19 +4,24 @@
     <string name="calculator_negative">±</string>
     <string name="calculator_percent">%</string>
     <string name="calculator_divide">÷</string>
-    <string name="calculator_num_seven">7</string>
-    <string name="calculator_num_eight">8</string>
-    <string name="calculator_num_nine">9</string>
+    <string name="calculator_num_seven">"7"</string>
+    <string name="calculator_num_eight">"8"</string>
+    <string name="calculator_num_nine">"9"</string>
     <string name="calculator_num_multiply">×</string>
-    <string name="calculator_num_four">4</string>
-    <string name="calculator_num_five">5</string>
-    <string name="calculator_num_six">6</string>
+    <string name="calculator_num_four">"4"</string>
+    <string name="calculator_num_five">"5"</string>
+    <string name="calculator_num_six">"6"</string>
     <string name="calculator_num_subtract">−</string>
-    <string name="calculator_num_one">1</string>
-    <string name="calculator_num_two">2</string>
-    <string name="calculator_num_three">3</string>
+    <string name="calculator_num_one">"1"</string>
+    <string name="calculator_num_two">"2"</string>
+    <string name="calculator_num_three">"3"</string>
     <string name="calculator_num_addition">+</string>
-    <string name="calculator_num_zero">0</string>
-    <string name="calculator_num_decimal">.</string>
+    <string name="calculator_num_zero">"0"</string>
+    <string name="calculator_num_decimal">"."</string>
     <string name="calculator_num_equals">=</string>
+    <string name="cos_text">cos</string>
+    <string name="tan_text">tan</string>
+    <string name="pi_text">pi</string>
+    <string name="sin_text">sin</string>
+    <string name="sqrt_text">√</string>
 </resources>

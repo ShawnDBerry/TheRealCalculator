@@ -17,6 +17,8 @@ public class MainActivity extends AppCompatActivity {
     private int answer;
     private String newText;
     private boolean operationDone;
+    private double doubleValue;
+    private double doubleAnswer;
 
     private final int ADDITION = 1;
     private final int SUBTRACTION = 2;
@@ -82,11 +84,13 @@ public class MainActivity extends AppCompatActivity {
                 if(calculatorText.getText().toString().trim().equals("0"))
                     calculatorText.setText(newText);
 
+                newText = calculatorText.getText().toString().trim() + 1;
+
                 if (operationDone)
                     operationDone = false;
-                    calculatorText.setText(newText);
+                calculatorText.setText(newText);
 
-                newText = calculatorText.getText().toString().trim() + 1;
+
                 calculatorText.setText(newText);
                 break;
 
@@ -94,23 +98,28 @@ public class MainActivity extends AppCompatActivity {
                 if(calculatorText.getText().toString().trim().equals("0"))
                     calculatorText.setText(newText);
 
+                newText = calculatorText.getText().toString().trim() + 2;
+
                 if (operationDone)
                     operationDone = false;
-                    calculatorText.setText(newText);
-
-                newText = calculatorText.getText().toString().trim() + 2;
                 calculatorText.setText(newText);
+
+
+                calculatorText.setText(newText);
+
                 break;
 
             case R.id.three_button:
                 if(calculatorText.getText().toString().trim().equals("0"))
                     calculatorText.setText(newText);
 
+                newText = calculatorText.getText().toString().trim() + 3;
+
                 if (operationDone)
                     operationDone = false;
-                    calculatorText.setText(newText);
+                calculatorText.setText(newText);
 
-                newText = calculatorText.getText().toString().trim() + 3;
+
                 calculatorText.setText(newText);
                 break;
 
@@ -118,11 +127,13 @@ public class MainActivity extends AppCompatActivity {
                 if(calculatorText.getText().toString().trim().equals("0"))
                     calculatorText.setText(newText);
 
+                newText = calculatorText.getText().toString().trim() + 4;
+
                 if (operationDone)
                     operationDone = false;
-                    calculatorText.setText(newText);
+                calculatorText.setText(newText);
 
-                newText = calculatorText.getText().toString().trim() + 4;
+
                 calculatorText.setText(newText);
                 break;
 
@@ -130,11 +141,13 @@ public class MainActivity extends AppCompatActivity {
                 if(calculatorText.getText().toString().trim().equals("0"))
                     calculatorText.setText(newText);
 
+                newText = calculatorText.getText().toString().trim() + 5;
+
                 if (operationDone)
                     operationDone = false;
-                    calculatorText.setText(newText);
+                calculatorText.setText(newText);
 
-                newText = calculatorText.getText().toString().trim() + 5;
+
                 calculatorText.setText(newText);
                 break;
 
@@ -142,11 +155,13 @@ public class MainActivity extends AppCompatActivity {
                 if(calculatorText.getText().toString().trim().equals("0"))
                     calculatorText.setText(newText);
 
+                newText = calculatorText.getText().toString().trim() + 6;
+
                 if (operationDone)
                     operationDone = false;
-                    calculatorText.setText(newText);
+                calculatorText.setText(newText);
 
-                newText = calculatorText.getText().toString().trim() + 6;
+
                 calculatorText.setText(newText);
                 break;
 
@@ -154,11 +169,13 @@ public class MainActivity extends AppCompatActivity {
                 if(calculatorText.getText().toString().trim().equals("0"))
                     calculatorText.setText(newText);
 
+                newText = calculatorText.getText().toString().trim() + 7;
+
                 if (operationDone)
                     operationDone = false;
-                    calculatorText.setText(newText);
+                calculatorText.setText(newText);
 
-                newText = calculatorText.getText().toString().trim() + 7;
+
                 calculatorText.setText(newText);
                 break;
 
@@ -166,11 +183,13 @@ public class MainActivity extends AppCompatActivity {
                 if(calculatorText.getText().toString().trim().equals("0"))
                     calculatorText.setText(newText);
 
+                newText = calculatorText.getText().toString().trim() + 8;
+
                 if (operationDone)
                     operationDone = false;
-                    calculatorText.setText(newText);
+                calculatorText.setText(newText);
 
-                newText = calculatorText.getText().toString().trim() + 8;
+
                 calculatorText.setText(newText);
                 break;
 
@@ -178,11 +197,13 @@ public class MainActivity extends AppCompatActivity {
                 if(calculatorText.getText().toString().trim().equals("0"))
                     calculatorText.setText(newText);
 
+                newText = calculatorText.getText().toString().trim() + 9;
+
                 if (operationDone)
                     operationDone = false;
-                    calculatorText.setText(newText);
+                calculatorText.setText(newText);
 
-                newText = calculatorText.getText().toString().trim() + 9;
+
                 calculatorText.setText(newText);
                 break;
 
@@ -190,20 +211,21 @@ public class MainActivity extends AppCompatActivity {
                 if(calculatorText.getText().toString().trim().equals("0"))
                     calculatorText.setText(newText);
 
+                newText = calculatorText.getText().toString().trim() + 0;
+
                 if (operationDone)
                     operationDone = false;
-                    calculatorText.setText(newText);
+                calculatorText.setText(newText);
 
-                newText = calculatorText.getText().toString().trim() + 0;
+
                 calculatorText.setText(newText);
                 break;
 
-            /*case R.id.decimal_button:
-
-                newText = calculatorText.getText().toString().trim() + ".";
-                if(calculatorText.getText().toString().trim())
+            case R.id.decimal_button:
+                doubleValue = Double.parseDouble(calculatorText.getText().toString());
+                newText = Double.toString(doubleValue);
                 calculatorText.setText(newText);
-                break;*/
+                break;
 
             case R.id.ac_button:
                 operationDone = false;
@@ -237,9 +259,15 @@ public class MainActivity extends AppCompatActivity {
                 break;
 
             case R.id.subtract_button:
-                valueHolder = Integer.parseInt(calculatorText.getText().toString());
-                operator = SUBTRACTION;
-                calculatorText.setText("0");
+                if(calculatorText.getText().toString().equals(String.valueOf(doubleValue))) {
+                    doubleValue = (double)valueHolder;
+                    operator = SUBTRACTION;
+                    calculatorText.setText("0");
+                } else {
+                    valueHolder = Integer.parseInt(calculatorText.getText().toString());
+                    operator = SUBTRACTION;
+                    calculatorText.setText("0");
+                }
                 break;
 
             case R.id.multiply_button:
@@ -269,7 +297,7 @@ public class MainActivity extends AppCompatActivity {
                     operationDone = true;
                 }
                 else if(operationDone && calculatorText.getText().equals(answer)){
-                calculatorText.getText();
+                    calculatorText.getText();
                 }
 
                 break;
@@ -284,17 +312,23 @@ public class MainActivity extends AppCompatActivity {
         if(operationDone) {
             calculatorText.setText(newText);
         }
-
+        doubleAnswer =0.0;
         answer = 0;
         switch (operater){
             case ADDITION:
                 answer = valueHolder + secondValue;
-               calculatorText.setText(answer + "");
-               break;
+                calculatorText.setText(answer + "");
+                break;
 
             case SUBTRACTION:
-                answer = valueHolder - secondValue;
-                calculatorText.setText(answer + "");
+                if(calculatorText.getText().toString().equals(String.valueOf(doubleValue))){
+                    doubleAnswer = (doubleValue) - (double)secondValue;
+                    Log.d("value", String.valueOf(doubleAnswer));
+                    calculatorText.setText(doubleAnswer + "");
+                }else{
+                    answer = valueHolder - secondValue;
+                    calculatorText.setText(answer + "");
+                }
                 break;
 
             case MULTIPLY:
